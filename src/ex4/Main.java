@@ -22,7 +22,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        String fn = "big_file.txt";
+        final String fn = "big_file.txt";
         RandomAccessFile f = null;
         long fs = 0;
         int ps = 1800;
