@@ -5,6 +5,7 @@
  * @version     1.0
  * @since       1.0
  *
+ * @paran fn - имя файла
  * @param fs - размер файла
  * @param ps - размер страницы
  * @param rb - буфер для чтения страницы
@@ -21,6 +22,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        String fn = "big_file.txt";
         RandomAccessFile f = null;
         long fs = 0;
         int ps = 1800;
@@ -28,7 +30,7 @@ public class Main {
         long t = System.currentTimeMillis();
 
         try {
-            f = new RandomAccessFile("big_file.txt", "r");
+            f = new RandomAccessFile(fn, "r");
             fs = f.length();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
@@ -36,6 +38,7 @@ public class Main {
             e.printStackTrace();
         }
 
+        System.out.printf("Размер файла %s - %.2f Мб.\n", fn, (float)fs/1024/1024);
         System.out.println("С начала запуска программы прошло " + (System.currentTimeMillis()-t) + " мс\n");
 
         Scanner in = new Scanner(System.in);
