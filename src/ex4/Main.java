@@ -25,6 +25,7 @@ public class Main {
         long fs = 0;
         int ps = 1800;
         byte[] rb = new byte[ps];
+        long t = System.currentTimeMillis();
 
         try {
             f = new RandomAccessFile("big_file.txt", "r");
@@ -35,9 +36,12 @@ public class Main {
             e.printStackTrace();
         }
 
+        System.out.println("С начала запуска программы прошло " + (System.currentTimeMillis()-t) + " мс\n");
+
         Scanner in = new Scanner(System.in);
         System.out.println("В файле " + fs/ps + " страниц, введите номер страницы, которую нужно вывести : ");
         int ip = in.nextInt();
+        t = System.currentTimeMillis();
 
         try {
             f.seek(ip*ps);
@@ -49,5 +53,7 @@ public class Main {
         for (byte b : rb) {
             System.out.print((char)b);
         }
+
+        System.out.println("\n\nНа операцию вывода требуемой страницы понадобилось "+ (System.currentTimeMillis()-t) + " мс");
     }
 }
