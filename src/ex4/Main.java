@@ -1,3 +1,17 @@
+/**
+ * Постраничный вывод информации из большого файла
+ *
+ * @author      Michael 3yeb <https://github.com/3yebMB>
+ * @version     1.0
+ * @since       1.0
+ *
+ * @param fs - размер файла
+ * @param ps - размер страницы
+ * @param rb - буфер для чтения страницы
+ * @param ip - вводимая пользователем страница
+ * @@return - в цикле выводим элементы rb.
+ */
+
 package ex4;
 
 import java.io.FileNotFoundException;
